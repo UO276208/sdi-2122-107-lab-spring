@@ -1,12 +1,17 @@
 package com.example.notaneitor.entities;
+
+import javax.persistence.*;
+
+@Entity
 public class Mark {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private String description;
     private Double score;
 
-    public Mark(){
-
-    }
+    public Mark(){    }
 
     public Mark(Long id, String description, Double score) {
         this.id = id;
