@@ -42,32 +42,15 @@
   <div class="panel panel-default">
 	  <div class="panel-heading">Descripción</div>
 	  <div class="panel-body">
-		Ejercicio 1
+          <p class="card-text"  th:text="${mark.description}">Ejercicio 1</p>
 	  </div>
   </div>
   <div class="panel panel-default">
 	  <div class="panel-heading">Puntuación</div>
 	  <div class="panel-body">
-		100
+          <p class="card-text"  th:text="${mark.score}">100</p>
 	  </div>
   </div>
-</div>
-
-<div class="container" id="main-container">
-    <h2>Detalles de la nota</h2>
-    <div class="card">
-        <div class="card-header">Descripción</div>
-        <div class="card-body">
-            <p class="card-text"  th:text="${mark.description}">Ejercicio 1</p>
-        </div>
-    </div>
-    <br>
-    <div class="card">
-        <div class="card-header">Puntuación</div>
-        <div class="card-body">
-            <p class="card-text"  th:text="${mark.score}">100</p>
-        </div>
-    </div>
 </div>
 
 </body>
