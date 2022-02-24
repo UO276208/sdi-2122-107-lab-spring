@@ -23,6 +23,7 @@ public class SecurityService {
 
     public String findLoggedInDni() {
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
+
         if (userDetails instanceof UserDetails) {
             return ((UserDetails) userDetails).getUsername();
         }
