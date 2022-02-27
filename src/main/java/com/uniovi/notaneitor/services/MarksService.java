@@ -3,6 +3,8 @@ package com.uniovi.notaneitor.services;
 import com.uniovi.notaneitor.entities.Mark;
 import com.uniovi.notaneitor.repositories.MarksRepository;
 import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.core.*;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
@@ -46,4 +48,12 @@ public class MarksService {
         marksRepository.deleteById(id);
     }
 
+    public void setMarkResend(boolean revised, Long id) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String dni = auth.getName();
+        Mark mark = marksRepository.findById(id).get();
+        if(mark.getUser().getDni().equals(dni) ) {
+                marksRepository.updateResend(revised, id);
+            }
+        }
 }
