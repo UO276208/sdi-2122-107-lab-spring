@@ -16,12 +16,12 @@ public class ProfesorController {
     @RequestMapping("/profesor/list")
     public String getList(Model model) {
         model.addAttribute("markList", profesorService.getProfesors());
-        return "Getting List" + profesorService.getProfesors().toString();
+        return "/profesor/list";
     }
     @RequestMapping(value = "/profesor/add", method = RequestMethod.POST)
     public String setProfesor(@ModelAttribute Profesor profesor) {
         profesorService.addProfesor(profesor);
-        return "Adding profesor";
+        return "/profesor/add";
     }
 
     @RequestMapping("/profesor/details/{id}")
