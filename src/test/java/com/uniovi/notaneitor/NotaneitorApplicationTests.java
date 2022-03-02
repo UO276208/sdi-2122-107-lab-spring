@@ -26,11 +26,6 @@ class NotaneitorApplicationTests {
         return driver;
     }
 
-
-    @Test
-    void contextLoads() {
-    }
-
     @BeforeEach
     public void setUp(){
         driver.navigate().to(URL);
