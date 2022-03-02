@@ -15,12 +15,11 @@ public class Profesor {
     private String surname;
     private String category;
 
-    public Profesor(String dni, String name, String surname, String category, long id){
+    public Profesor(String dni, String name, String surname, String category){
         this.category = category;
         this.dni = dni;
         this.name = name;
         this.surname = surname;
-        this.id = id;
     }
 
     public Profesor() {
